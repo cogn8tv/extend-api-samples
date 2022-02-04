@@ -3,6 +3,8 @@ function getAccessToken(settings) {
     return new Promise((succeed, fail) => {
         const mgr = new Oidc.UserManager(settings);
 
+        log("Settings:" + settings);
+        
         //check for token in URL
         if (location.search.includes("code=", 1)) {
             //Response code was found in query. Trying to exchange code for token...
